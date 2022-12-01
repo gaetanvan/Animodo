@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+body {
+    background: #2FA0A7;
+}
+h1 {
+    text-align: center;
+    position: center;
+    font-family: 'Kodchasan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 120px;
+    line-height: 156px;
+}
