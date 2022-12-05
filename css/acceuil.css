@@ -6,9 +6,20 @@ body {
 h1 {
     text-align: center;
     position: center;
-    font-family: 'Kodchasan';
+    font-family: "Comic Sans MS";
+    color: white;
     font-style: normal;
     font-weight: 400;
     font-size: 120px;
     line-height: 156px;
+}
+.center  {
+    text-align: center;
+    margin-top: 200px;
+}
+.username {
+    margin: 10px;
+}
+.login {
+    margin-top: 20px;
 }
