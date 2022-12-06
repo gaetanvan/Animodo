@@ -23,3 +23,12 @@ h1 {
 .login {
     margin-top: 20px;
 }
+.createRectangle{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 14px;
+    justify-items: center;
+    align-items: center;
+}
