@@ -1,4 +1,40 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+if (isset($_POST['submit']))
+{
+    $mail = htmlspecialchars($_POST['mail']);
+    $pass = $_POST['pass'];
+
+    $db = new PDO('mysql:host=localhost;dbname=animodo', 'root', '');
+
+    $sql = "SELECT * FROM user where mail = '$mail'";
+    $result = $db->prepare($sql);
+    $result->execute();
+
+    if ($result->rowCount() > 0)
+    {
+        $data = $result->fetchAll();
+        if (password_verify($pass, $data[0]['password']))
+        {
+            if ($data[0]['admin'] == "user") {
+                $_SESSION['mail'] = $mail;
+                $_SESSION['password'] = $pass;
+                header('Location:login.php');
+            }
+            elseif ($data[0]['admin'] == "admin") {
+                $_SESSION['mail'] = $mail;
+                $_SESSION['password'] = $pass;
+                header('Location:admin.php');
+            }
+        }
+    }
+    else
+    {
+        echo 'Mot de passe ou mail incorrect.';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +44,7 @@
 </head>
 <body>
 <h1>Animodo</h1>
-<?php
-if (isset($_SESSION['mail']))
-{
-    echo "<center><h2>Vous êtes connecté :" . $_SESSION['mail'] . "</h2></center>";
-}
-else
-{
-    ?>
-    <form method="POST" action="login.php">
+    <form method="POST" action="">
         <div class="center">
             <div class="username">
                 <input type="text" name="mail" placeholder="Mail" required>
@@ -29,9 +57,5 @@ else
             </div>
         </div>
     </form>
-    <?php
-}
-?>
 </body>
 </html>
-
