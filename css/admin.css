@@ -1,0 +1,10 @@
+@charset "utf_8";
+
+.adminRectangle {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 40px;
+}
