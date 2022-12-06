@@ -1,0 +1,22 @@
+<?php
+if (isset($_SESSION['mail']))
+{
+    echo "<center><h2>Vous êtes connecté :" . $_SESSION['mail'] . "</h2></center>";
+}
+else
+{
+    ?>
+
+       <?php
+    }
+    ?>
+
+
+
+
+
+    $pass = password_hash($pass, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO user (mail, password) VALUES ('$mail','$pass')";
+            $req = $db->prepare($sql);
+            $req->execute();
+            echo "Vous êtes inscrit";
