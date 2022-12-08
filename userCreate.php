@@ -14,7 +14,7 @@ if (isset($_POST['register'])) {
         $admin = $_POST['admin'];
         $insertUser = $bdd->prepare('INSERT INTO user (name, mail, password, admin) VALUES (? , ? , ? , ?)');
         $insertUser->execute(array($name , $mail, $password , $admin));
-        header('Location:admin.php');
+        header('Location:admin.php?id='.$_SESSION['userID']);
     } else {
         echo "Veuillez completer tous les champs..";
     }
