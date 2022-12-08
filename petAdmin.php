@@ -62,6 +62,7 @@ else {
             <p class="meetings">Prochain vaccin : 20/07/1999</p>
         </div>
         <a href="petEdit.php?id=<?php echo $getId ?>&petid=<?php echo $petInfo['petID'] ?>"><button>Modifier</button></a>
+        <a href="mail.php?id=<?php echo $getId ?>&petid=<?php echo $petInfo['petID'] ?>"><button>Mail rappel</button></a>
     </div>
     <?php endforeach; ?>
 </div>
