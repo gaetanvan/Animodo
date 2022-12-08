@@ -15,17 +15,18 @@ if (isset($_POST['submit']))
     if ($result->rowCount() > 0)
     {
         $data = $result->fetchAll();
-        if (password_verify($pass, $data[0]['password']))
-        {
+        if (password_verify($pass , $data[0]['password'])){
             if ($data[0]['admin'] == "user") {
-                $_SESSION['mail'] = $mail;
-                $_SESSION['password'] = $pass;
-                header('Location:login.php');
+                $_SESSION['mail'] = $data[0]['mail'];
+                $_SESSION['password'] = $data[0]['password'];
+                $_SESSION['userID'] = $data[0]['userID'];
+                header('Location:login.php?id='.$_SESSION['userID']);
             }
             elseif ($data[0]['admin'] == "admin") {
                 $_SESSION['mail'] = $mail;
                 $_SESSION['password'] = $pass;
-                header('Location:admin.php');
+                $_SESSION['userID'] = $data[0]['userID'];
+                header('Location:admin.php?id='.$_SESSION['userID']);
             }
         }
     }
