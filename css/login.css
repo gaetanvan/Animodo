@@ -47,3 +47,24 @@ body {
     width: 70%;
     position: center;
 }
+.adminRectangle {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 40px;
+}
+.button {
+    background-color: #1f6b70;
+    border: white;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-left: 25px;
+    cursor: pointer;
+}
