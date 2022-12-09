@@ -46,7 +46,7 @@ else {
             <a href="petAdmin.php?id=<?php echo $user['userID'] ?>"><button>Accéder</button></a>
         </div>
     <?php endforeach; ?>
-    <a href="logout.php" ><button name="logout">Logout</button></a>
+    <a href="logout.php" ><button name="logout" class="button">Logout</button></a>
 </div>
 <div id="rectangle-color" class="adminRectangle">
     <div class="petAdd">

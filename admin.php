@@ -28,7 +28,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0){
 <div id="rectangle-color" class="rectangle2Admin">
     <div class="userAdd">
         <a href="userCreate.php">
-            <button>Nouvelle utilisateur</button>
+            <button class="button">Nouvelle utilisateur</button>
         </a>
     </div>
     <?php foreach($user as $user): ?>
@@ -37,15 +37,15 @@ if (isset($_GET['id']) AND $_GET['id'] > 0){
             <a href="petAdmin.php?id=<?php echo $user['userID'] ?>"><button>Accéder</button></a>
         </div>
     <?php endforeach; ?>
+    <a href="logout.php" ><button name="logout" class="button">Logout</button></a>
 </div>
 <div id="rectangle-color" class="adminRectangle">
     <div class="petAdd">
         <a href="petCreate.php?id=<?php echo $getId ?>">
-            <button>Nouvel animal</button>
+            <button class="button">Nouvel animal</button>
         </a>
     </div>
 </div>
 </body>
 <footer>
-    <a href="logout.php" ><button name="logout">Logout</button></a>
 </footer>
