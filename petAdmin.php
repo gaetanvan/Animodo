@@ -37,7 +37,7 @@ else {
 <div id="rectangle-color" class="rectangle2Admin">
     <div class="userAdd">
         <a href="userCreate.php">
-            <button>Nouvelle utilisateur</button>
+            <button class="button">Nouvelle utilisateur</button>
         </a>
     </div>
     <?php foreach($user as $user): ?>
@@ -46,11 +46,12 @@ else {
             <a href="petAdmin.php?id=<?php echo $user['userID'] ?>"><button>Accéder</button></a>
         </div>
     <?php endforeach; ?>
+    <a href="logout.php" ><button name="logout">Logout</button></a>
 </div>
 <div id="rectangle-color" class="adminRectangle">
     <div class="petAdd">
         <a href="petCreate.php?id=<?php echo $getId ?>">
-            <button>Nouvel animal</button>
+            <button class="button">Nouvel animal</button>
         </a>
     </div>
     <?php foreach($petInfo as $petInfo): ?>
@@ -59,7 +60,17 @@ else {
             <img class="petimg" src="img/chat.jpg">
             <p class="name">Nom : <?php echo $petInfo['petName']; ?></p>
             <p class="age">Age : <?php echo $petInfo['petAge']; ?> ans<br>Poids : <?php echo $petInfo['petWeight']; ?>kg</p>
-            <p class="meetings">Prochain vaccin : 20/07/1999</p>
+            <p class="meetings">Prochain vaccin : <?php
+                $meetingsRequest = $db->prepare("SELECT * FROM meetings where petID = ?");
+                $meetingsRequest->execute(array($petInfo['petID']));
+                $meetingsInfo = $meetingsRequest->fetch();
+                if (isset($meetingsInfo['meetingDate'])){
+                echo $meetingsInfo['meetingDate'];}
+                else{
+                    echo 'Pas de rendez-vous';
+                }
+                ?>
+            </p>
         </div>
         <a href="petEdit.php?id=<?php echo $getId ?>&petid=<?php echo $petInfo['petID'] ?>"><button>Modifier</button></a>
         <a href="mail.php?id=<?php echo $getId ?>&petid=<?php echo $petInfo['petID'] ?>"><button>Mail rappel</button></a>
@@ -68,5 +79,4 @@ else {
 </div>
 </body>
 <footer>
-    <a href="logout.php" ><button name="logout">Logout</button></a>
 </footer>
