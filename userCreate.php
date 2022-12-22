@@ -1,4 +1,7 @@
 <?php
+
+use class\Pdo;
+
 session_start();
 if (!$_SESSION['password']) {
     header('Location:index.php');
@@ -51,7 +54,6 @@ if (isset($_POST['register'])) {
             <div class="register">
                 <button name="register">Register</button>
             </div>
-
         </form>
     </div>
 </body>

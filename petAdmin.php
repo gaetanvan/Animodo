@@ -1,4 +1,7 @@
 <?php
+
+use class\Pdo;
+
 session_start();
 $db = new PDO('mysql:host=localhost;dbname=animodo', 'root', '');
 if (!$_SESSION['password']){

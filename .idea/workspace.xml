@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8178d4d-d00e-4d01-88f8-96528155e825" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userCreate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/acceuil.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/acceuil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +36,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/laragon/www/animodo",
+    "last_opened_file_path": "C:/laragon/www",
     "list.type.of.created.stylesheet": "CSS",
     "vue.rearranger.settings.migration": "true"
   }
@@ -56,7 +49,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670314616835</updated>
-      <workItem from="1670314618487" duration="21100000" />
+      <workItem from="1670314618487" duration="21350000" />
+      <workItem from="1670409565123" duration="14319000" />
     </task>
     <servers />
   </component>
@@ -73,5 +67,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/login.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

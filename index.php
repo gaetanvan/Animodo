@@ -1,4 +1,7 @@
 <?php
+
+use class\Pdo;
+
 session_start();
 
 if (isset($_POST['submit']))
@@ -11,7 +14,6 @@ if (isset($_POST['submit']))
     $sql = "SELECT * FROM user where mail = '$mail'";
     $result = $db->prepare($sql);
     $result->execute();
-
     if ($result->rowCount() > 0)
     {
         $data = $result->fetchAll();
