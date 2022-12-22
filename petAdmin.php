@@ -37,32 +37,49 @@ else {
     <link rel="stylesheet" type="text/css" href="css/admin.css">
 </head>
 <body>
-<div id="rectangle-color" class="rectangle2">
+<div id="rectangle-color" class="rectangle2Admin">
+    <div class="userAdd">
+        <a href="userCreate.php">
+            <button class="button">Nouvelle utilisateur</button>
+        </a>
+    </div>
     <?php foreach($user as $user): ?>
         <div class="user">
             <p name='name'><?php echo $user['name']; ?><br>3 animaux</p>
             <a href="petAdmin.php?id=<?php echo $user['userID'] ?>"><button>Accéder</button></a>
         </div>
     <?php endforeach; ?>
+    <a href="logout.php" ><button name="logout" class="button">Logout</button></a>
 </div>
 <div id="rectangle-color" class="adminRectangle">
-    <div class="userAdd">
-        <a href="userCreate.php">
-            <button>Nouvelle utilisateur</button>
+    <div class="petAdd">
+        <a href="petCreate.php?id=<?php echo $getId ?>">
+            <button class="button">Nouvel animal</button>
         </a>
     </div>
     <?php foreach($petInfo as $petInfo): ?>
-    <a id="petInfo" class="link" href="petAdmin.php">
+    <div class="petRectangle">
         <div class="pet1">
             <img class="petimg" src="img/chat.jpg">
-            <p class="name">Nom : chat1</p>
-            <p class="age">Age : 3 ans<br>Poids : 15kg</p>
-            <p class="meetings">Prochain vaccin : 20/07/1999</p>
+            <p class="name">Nom : <?php echo $petInfo['petName']; ?></p>
+            <p class="age">Age : <?php echo $petInfo['petAge']; ?> ans<br>Poids : <?php echo $petInfo['petWeight']; ?>kg</p>
+            <p class="meetings">Prochain vaccin : <?php
+                $meetingsRequest = $db->prepare("SELECT * FROM meetings where petID = ?");
+                $meetingsRequest->execute(array($petInfo['petID']));
+                $meetingsInfo = $meetingsRequest->fetch();
+                if (isset($meetingsInfo['meetingDate'])){
+                echo $meetingsInfo['meetingDate'];}
+                else{
+                    echo 'Pas de rendez-vous';
+                }
+                ?>
+            </p>
         </div>
-    </a>
+        <a href="petEdit.php?id=<?php echo $getId ?>&petid=<?php echo $petInfo['petID'] ?>"><button>Modifier</button></a>
+        <a href="mail.php?id=<?php echo $getId ?>&petid=<?php echo $petInfo['petID'] ?>"><button>Mail rappel</button></a>
+    </div>
     <?php endforeach; ?>
 </div>
 </body>
 <footer>
-    <a href="logout.php" ><button name="logout">Logout</button></a>
 </footer>

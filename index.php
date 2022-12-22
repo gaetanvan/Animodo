@@ -50,7 +50,7 @@ if (isset($_POST['submit']))
     <form method="POST" action="">
         <div class="center">
             <div class="username">
-                <input type="text" name="mail" placeholder="Mail" required>
+                <input type="email" name="mail" placeholder="Mail" required>
             </div>
             <div class="password">
                 <input type="password" name="pass"  placeholder="Mot de passe" required>

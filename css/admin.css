@@ -33,3 +33,39 @@ body {
     margin: 20px;
     padding : 10px;
 }
+
+.rectangle2Admin {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+    justify-items: center;
+    color: #D9D9D9;
+}
+.userAdd {
+    margin-top: 20px;
+}
+.pet1 {
+    margin-bottom: 20px;
+}
+.petRectangle {
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 0.1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    color: #D9D9D9;
+}
+.button {
+    background-color: #2FA0A7;
+    border: white;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

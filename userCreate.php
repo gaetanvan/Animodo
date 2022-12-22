@@ -40,7 +40,7 @@ if (isset($_POST['register'])) {
                 <input type="text" name="name" placeholder="Nom" required>
             </div>
             <div class="username">
-                <input type="text" name="mail" placeholder="Mail" required>
+                <input type="email" name="mail" placeholder="Mail" required>
             </div>
             <div class="password">
                 <input type="password" name="password"  placeholder="Mot de passe" required>
